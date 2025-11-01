@@ -187,6 +187,8 @@ require('lazy').setup({
       },
     },
   },
+
+  -- File explorer
   {
     'nvim-tree/nvim-tree.lua',
     version = '*',
@@ -195,7 +197,12 @@ require('lazy').setup({
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('nvim-tree').setup {}
+      require('nvim-tree').setup {
+        filters = {
+          dotfiles = false,
+        },
+      }
+      vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true, desc = 'Toggle file explorer' })
     end,
   },
 
