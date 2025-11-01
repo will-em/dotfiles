@@ -199,7 +199,7 @@ require('lazy').setup({
     config = function()
       require('nvim-tree').setup {
         filters = {
-          dotfiles = false,
+          dotfiles = true,
         },
       }
       vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true, desc = 'Toggle file explorer' })
